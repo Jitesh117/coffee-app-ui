@@ -1,6 +1,6 @@
 # Coffee app UI 
 * A basic coffee app UI made using Flutter
-* Screenshots:
+# Screenshots
 <p align = "center">
 <img  width = 180 src = "./screenshots/one.jpg" >
 <img  width = 180 src = "./screenshots/two.jpg" >
