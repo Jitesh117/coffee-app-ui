@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CoffeeTile extends StatelessWidget {
-  const CoffeeTile({Key? key}) : super(key: key);
-
+  const CoffeeTile({
+    Key? key,
+    required this.coffeImagePath,
+    required this.coffeeName,
+    required this.coffeePrice,
+  }) : super(key: key);
+  final String coffeImagePath;
+  final String coffeeName;
+  final String coffeePrice;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,24 +27,41 @@ class CoffeeTile extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset('assets/coffetwo.jpg'),
+              child: Image.asset(coffeImagePath),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Latte',
-                    style: TextStyle(fontSize: 20),
+                   Text(
+                    coffeeName,
+                    style:const TextStyle(fontSize: 20),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 4,
                   ),
                   Text(
                     'With Almond Milk',
                     style: TextStyle(color: Colors.grey.shade700),
                   )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(coffeePrice),
+                  Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(4)),
+                      child: Icon(
+                        Icons.add,
+                      )),
                 ],
               ),
             )
